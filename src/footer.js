@@ -1,6 +1,5 @@
-import './footer.css';
+
 import {red , blue} from './button-styles';
-import { runInContext } from 'vm';
 
 const top = document.createElement("div");
 top.innerText = "Top of Footer";
