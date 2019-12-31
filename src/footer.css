@@ -1,5 +1,6 @@
-footer{
-    height: 100px;
-    width: 100px;
-    background-color: darkolivegreen;
+footer {
+  height: 100px;
+  width: 100%;
+  background: yellowgreen;
+  border: thin red solid;
 }

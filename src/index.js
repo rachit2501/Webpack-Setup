@@ -1,16 +1,16 @@
 import nav from "./nav";
-import { top, bottom } from "./footer";
+import { footer } from "./footer";
 import makeButton from "./button";
 import { makeColorStyle } from "./button-styles";
-import {footer} from './footer';
-import './button.css';
-import './footer.css';
-import imageUrl from './download.jpeg';
-import makeImage from './image';
+import makeImage from "./image";
+import imageUrl from "./webpack-logo.jpg";
+import css from "./footer.css";
+import buttonStyles from "./button.css";
 
 const image = makeImage(imageUrl);
-const button  = makeButton("Button");
+const button = makeButton("Yay! A Button!");
 button.style = makeColorStyle("cyan");
+
 document.body.appendChild(button);
-document.body.appendChild(footer);
 document.body.appendChild(image);
+document.body.appendChild(footer);
