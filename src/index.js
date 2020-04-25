@@ -2,6 +2,7 @@ import nav from "./nav";
 // import { footer } from "./footer";
 const gsap = ()=>import('gsap');
 const getFooter = ()=>import(/* webpackChunkName: "footer" */ "./footer");
+
 import makeButton from "./button";
 import { makeColorStyle } from "./button-styles";
 import makeImage from "./image";
