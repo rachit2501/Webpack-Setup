@@ -1,7 +1,7 @@
 {
-    "name": "eosis-hack",
+    "name": "Webpack Boilerplate",
     "version": "1.0.0",
-    "description": "Project Made for EOSIS Hackathon",
+    "description": "Webpack 4 BoilerPlate",
     "main": "index.js",
     "scripts": {
         "dev": "npm run webpack-dev-server -- --hot --env.mode development",
@@ -18,14 +18,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/rachit2501/EOSIS-Hack.git"
+        "url": "git+https://github.com/rachit2501/Webpack-Setup.git"
     },
     "author": "Rachit Anand",
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/rachit2501/EOSIS-Hack/issues"
-    },
-    "homepage": "https://github.com/rachit2501/EOSIS-Hack#readme",
     "dependencies": {
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
