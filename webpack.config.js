@@ -1,36 +1,8 @@
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpackMerge = require("webpack-merge");
+const commonConfig = require("./webpack/webpack.common.js");
+const loadPresets = require("./webpack/presets/loadPresets");
 
-const modeConfig = env => require(`./build-utils/webpack.${env}`)(env);
-const presetConfig = require("./build-utils/loadPresets");
-
-module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
-  return webpackMerge(
-    {
-      mode,
-      module: {
-        rules: [
-          {
-            test: /\.jpe?g$/,
-            use: [
-              {
-                loader: "url-loader",
-                options: {
-                  limit: 5000
-                }
-              }
-            ]
-          }
-        ]
-      },
-      output: {
-        filename: "bundle.js",
-        chunkFilename:"[name].lazy-chunk.js"
-      },
-      plugins: [new HtmlWebpackPlugin(), new webpack.ProgressPlugin()]
-    },
-    modeConfig(mode),
-    presetConfig({ mode, presets })
-  );
+module.exports = ({ mode, presets }) => {
+    const envModeConfig = require(`./webpack/webpack.${mode}.js`);
+    return webpackMerge(commonConfig, envModeConfig, loadPresets({ presets }));
 };
