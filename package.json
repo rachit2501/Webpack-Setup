@@ -1,10 +1,10 @@
 {
-    "name": "Webpack Boilerplate",
+    "name": "eosis-hack",
     "version": "1.0.0",
-    "description": "Webpack 4 BoilerPlate",
+    "description": "Project Made for EOSIS Hackathon",
     "main": "index.js",
     "scripts": {
-        "dev": "npm run webpack-dev-server -- --hot --env.mode development",
+        "dev": "npm run webpack-dev-server -- --host 0.0.0.0 --hot --env.mode development",
         "prod": "npm run webpack -- --env.mode production",
         "webpack": "webpack",
         "webpack-dev-server": "webpack-dev-server",
@@ -14,15 +14,27 @@
         "prod:compress": "npm run prod -- --env.presets compress",
         "prod:debug": "npm run debug -- --env.mode production",
         "dev:debug": "npm run debug -- --env.mode development",
-        "test": "jest"
+        "test": "jest",
+        "docker:singleDev": "./rundockerdev.sh",
+        "docker:singleProd": "./rundocker.sh",
+        "docker:multiDevUsingMongo": "docker-compose -f dev.dockerfile",
+        "docker:multiProdUsingMongo": "docker-compose",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "format": "prettier --write \"src/**/*.{js,jsx}\""
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/rachit2501/Webpack-Setup.git"
+        "url": "git+https://github.com/rachit2501/EOSIS-Hack.git"
     },
     "author": "Rachit Anand",
     "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/rachit2501/EOSIS-Hack/issues"
+    },
+    "homepage": "https://github.com/rachit2501/EOSIS-Hack#readme",
     "dependencies": {
+        "lint-staged": "^10.2.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "ts-jest": "^25.4.0"
@@ -79,5 +91,9 @@
         "webpack-node-externals": "^1.7.2",
         "webpack-visualizer-plugin": "^0.1.11",
         "workbox-webpack-plugin": "^5.1.3"
-    }
+    },
+    "browserslist": [
+        "last 10 Firefox versions",
+        "last 10 Chrome versions"
+    ]
 }
